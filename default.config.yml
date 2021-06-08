@@ -135,3 +135,5 @@ sdkman_update: true
 sdkman_auto_answer: true
 sdkman_install_packages:
   - { candidate: java, version: 11.0.11.hs-adpt }
+sdkman_defaults:
+  java: 11.0.11.hs-adpt
