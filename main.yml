@@ -24,6 +24,8 @@
     - role: geerlingguy.mac.dock
       when: configure_dock
       tags: ['dock']
+    - role: Comcast.sdkman
+      tags: ['java']
 
   tasks:
     - import_tasks: tasks/sudoers.yml
