@@ -27,6 +27,8 @@
     - role: Comcast.sdkman
       when: install_jdk
       tags: ['java']
+    - role: ansible-role-macos-hostname
+    - role: diodonfrost.ohmyzsh
 
   tasks:
     - import_tasks: tasks/sudoers.yml

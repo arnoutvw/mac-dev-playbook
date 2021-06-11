@@ -137,3 +137,23 @@ sdkman_install_packages:
   - { candidate: java, version: 11.0.11.hs-adpt }
 sdkman_defaults:
   java: 11.0.11.hs-adpt
+
+mh_localhostname: ArnoutsTouchbookPro
+mh_computername: ArnoutsTouchbookPro
+
+#zsh
+ohmyzsh_theme: agnoster
+ohmyzsh_plugins:
+  - git
+  - mvn
+  - textmate
+  - cp
+  - docker
+  - github
+  - java
+  - npm
+  - brew
+  - kubectl
+  - history
+  - history-substring-search
+
