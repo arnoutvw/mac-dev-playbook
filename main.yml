@@ -12,9 +12,11 @@
       tags: ['always']
 
   roles:
+    - role: ansible-role-intellij
     - role: elliotweiser.osx-command-line-tools
     - role: geerlingguy.mac.homebrew
       tags: ['homebrew']
+    - role: gantsign.oh-my-zsh
     - role: geerlingguy.dotfiles
       when: configure_dotfiles
       tags: ['dotfiles']
@@ -27,8 +29,7 @@
     - role: Comcast.sdkman
       when: install_jdk
       tags: ['java']
-    - role: ansible-role-macos-hostname
-    - role: diodonfrost.ohmyzsh
+    - role: ctorgalson.macos_hostname
 
   tasks:
     - import_tasks: tasks/sudoers.yml
@@ -49,6 +50,19 @@
     - import_tasks: tasks/sublime-text.yml
       when: configure_sublime
       tags: ['sublime-text']
+
+    - name: Copy default ssh config
+      when: copy_ssh_config
+      copy:
+        remote_src: yes
+        src: "{{ dotfiles_repo_local_destination }}/ssh/config"
+        dest: "{{ dotfiles_home }}/.ssh/config"
+
+    - name: Reset git status .zshrc
+      when: configure_dotfiles
+      command:
+        chdir: "{{ dotfiles_repo_local_destination }}"
+        cmd: "git restore .zshrc"
 
     - name: Run configured post-provision ansible task files.
       include_tasks: "{{ outer_item }}"

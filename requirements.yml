@@ -3,6 +3,9 @@ roles:
   - name: elliotweiser.osx-command-line-tools
   - name: geerlingguy.dotfiles
   - name: Comcast.sdkman
+  - name: ctorgalson.macos_hostname
+  - name: gantsign.oh-my-zsh
+  - name: arnoutvw.intellij
 
 collections:
   - name: geerlingguy.mac

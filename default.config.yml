@@ -7,11 +7,19 @@ configure_osx: true
 
 # Set to 'true' to configure the Dock via dockutil.
 configure_dock: false
-dockitems_remove: []
-# - Launchpad
-# - TV
-# - Podcasts
-# - 'App Store'
+dockitems_remove:
+  - Launchpad
+  - TV
+  - Podcasts
+  - 'App store'
+  - Messages
+  - Maps
+  - Photos
+  - FaceTime
+  - Contacts
+  - Reminders
+  - Notes
+  - Music
 dockitems_persist: []
 # - name: "Sublime Text"
 #   path: "/Applications/Sublime Text.app/"
@@ -24,7 +32,7 @@ sudoers_custom_config: ''
 #   # Allow users in admin group to use sudo with no password.
 #   %admin ALL=(ALL) NOPASSWD: ALL
 
-dotfiles_repo: https://github.com/geerlingguy/dotfiles.git
+dotfiles_repo: https://www.github.com/arnoutvw/dotfiles.git
 dotfiles_repo_accept_hostkey: true
 dotfiles_repo_local_destination: ~/Development/GitHub/dotfiles
 dotfiles_files:
@@ -35,33 +43,18 @@ dotfiles_files:
   - .vimrc
 
 homebrew_installed_packages:
-  # - ansible # Installed via Pip.
-  - autoconf
-  - bash-completion
-  - doxygen
-  - gettext
-  - gifsicle
   - git
-  - github/gh/gh
-  - go
-  - gpg
+  - bash-completion
   - httpie
-  - iperf
-  - libevent
-  - sqlite
-  - mcrypt
-  - nmap
-  - node
   - nvm
-  - php
+  - node
   - ssh-copy-id
-  - cowsay
-  - readline
-  - openssl
-  - pv
-  - wget
-  - wrk
   - zsh-history-substring-search
+  - k9s
+  - maven
+  - wget
+  - gradle
+  - zsh
 
 homebrew_taps:
   - homebrew/core
@@ -69,21 +62,53 @@ homebrew_taps:
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
-  - chromedriver
   - docker
   - dropbox
   - firefox
   - google-chrome
-  - handbrake
-  - licecap
-  - sequel-pro
-  - slack
   - sublime-text
   - transmit
+#  - intellij-idea
+  - microsoft-teams
+  - textmate
+  - parsec
+  - alfred
+  - beyond-compare
+  - choosy
+  - cleanmymac
+  - coconutbattery
+  - ipvanish-vpn
+  - iterm2
+  - microsoft-office
+  - postman
+  - royal-tsx
+  - sequel-pro
+  - scroll-reverser
+  - spotify
+  - spotify-now-playing
+  - visualvm
+  - syncthing
   - vagrant
+  - vagrant-manager
+  - 1password-cli
 
 # See `geerlingguy.mas` role documentation for usage instructions.
-mas_installed_apps: []
+mas_installed_apps:
+  - { id: 1333542190, name: "1Password" }
+  - { id: 904280696, name: "Things" }
+  - { id: 417375580, name: "BetterSnapTool" }
+  - { id: 823766827, name: "OneDrive" }
+  - { id: 1455214828, name: "MQTT Explorer" }
+  - { id: 425424353, name: "The Unarchiver" }
+  - { id: 1099568401, name: "Home assistant" }
+  - { id: 937984704, name: "Amphetamine" }
+  - { id: 407963104, name: "Pixelmator" }
+  - { id: 411643860, name: "DaisyDisk" }
+  - { id: 1147396723, name: "WhatsApp" }
+  - { id: 1510445899, name: "Meeter" }
+  - { id: 803453959, name: "Slack" }
+  - { id: 290986013, name: "Deliveries" }
+  - { id: 1451685025, name: "WireGuard" }
 mas_email: ""
 mas_password: ""
 
@@ -110,7 +135,7 @@ pip_packages: []
 #   version: "0.16.3" # default: N/A
 
 # Set to 'true' to configure Sublime Text.
-configure_sublime: false
+configure_sublime: true
 sublime_base_path: '~/Library/Application Support/Sublime Text'
 sublime_config_path: "Packages/User"
 sublime_package_control:
@@ -126,6 +151,8 @@ sublime_package_control:
   - "SublimeLinter-contrib-yamllint"
   - "TrailingSpaces"
   - "WordCount"
+  - "Indent XML"
+  - "Indent JSON"
 
 # Glob pattern to ansible task files to run after all other tasks are finished.
 post_provision_tasks: []
@@ -134,12 +161,11 @@ install_jdk: true
 sdkman_update: true
 sdkman_auto_answer: true
 sdkman_install_packages:
-  - { candidate: java, version: 11.0.11.hs-adpt }
+  - { candidate: java, version: 8.0.302-tem }
+  - { candidate: java, version: 11.0.12-tem }
+  - { candidate: java, version: 17.0.1-tem }
 sdkman_defaults:
-  java: 11.0.11.hs-adpt
-
-mh_localhostname: ArnoutsTouchbookPro
-mh_computername: ArnoutsTouchbookPro
+  java: 11.0.12-tem
 
 #zsh
 ohmyzsh_theme: agnoster
@@ -157,3 +183,6 @@ ohmyzsh_plugins:
   - history
   - history-substring-search
 
+copy_ssh_config: true
+
+intellij_edition: ultimate
